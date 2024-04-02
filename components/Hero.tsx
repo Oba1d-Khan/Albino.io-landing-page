@@ -1,14 +1,26 @@
+'use client'
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Button from "./Button";
 import { ContainerScroll } from "./ui/container-scroll-animation";
 
 const Hero = () => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        setIsVisible(true);
+    }, []);
+
     return (
-
         <section>
-            <div className="flex flex-col overflow-hidden ">
-
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="flex flex-col overflow-hidden"
+            >
                 <ContainerScroll
                     titleComponent={
                         <>
@@ -18,7 +30,8 @@ const Hero = () => {
                                     awesome remote team
                                 </h1>
                                 <p className="max-w-lg mx-auto mt-8 text-lg leading-snug text-lightBlack font-poppins">
-                                    We share common trends and strategies for improving your rental income and making sure you stay in high demand.
+                                    We share common trends and strategies for improving your
+                                    rental income and making sure you stay in high demand.
                                 </p>
                                 <div className="flex justify-center items-center w-full max-w-2xl gap-2 mx-auto mt-4">
                                     <Button />
@@ -32,17 +45,22 @@ const Hero = () => {
                         </>
                     }
                 >
-                    <Image
-                        src="/images/hero-img.png"
-                        alt="hero"
-                        height={720}
-                        width={1400}
-                        className="mx-auto rounded-2xl object-cover object-center md:h-full md:object-left-top"
-                        draggable={false}
-                    />
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 1 }}
+                    >
+                        <Image
+                            src="/images/hero-img.png"
+                            alt="hero"
+                            height={720}
+                            width={1400}
+                            className="mx-auto rounded-2xl object-cover object-center md:h-full md:object-left-top"
+                            draggable={false}
+                        />
+                    </motion.div>
                 </ContainerScroll>
-            </div>
-
+            </motion.div>
         </section>
     );
 };
