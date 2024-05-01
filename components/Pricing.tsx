@@ -1,7 +1,14 @@
+'use client'
 import Image from "next/image";
 import Button from "./Button";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Pricing = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 })
+    }, [])
     const data = [
         {
             heading: "Can I use Albino for my clients?",
@@ -21,8 +28,10 @@ const Pricing = () => {
         },
     ];
     return (
-        <section className="bg-lightBlack ">
-            <div className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-24 ">
+        <section className="bg-lightBlack " id="pricing">
+            <div className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-24 " data-aos="fade-down"
+                data-aos-anchor-placement="top-bottom"
+            >
                 <div className="flex w-full mx-auto text-left ">
                     <div className="relative inline-flex items-center mx-auto align-middle ">
                         <div className="text-center">
@@ -93,23 +102,26 @@ const Pricing = () => {
                                         </div>
 
                                         {/* -- */}
-                                        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-20 ">
+                                        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-20 "
+                                        >
                                             {data.map((item) => (
-                                                <div
-                                                    className="flex gap-4 items-start py-4"
-                                                    key={item.heading}
+                                                <div data-aos="fade-down" key={item.heading}
                                                 >
-                                                    <div className="px-4 py-[0.4rem] rounded-full bg-green text-white text-lg font-rubik">
-                                                        ?
-                                                    </div>
+                                                    <div
+                                                        className="flex gap-4 items-start py-4"
+                                                    >
+                                                        <div className="px-4 py-[0.4rem] rounded-full bg-green text-white text-lg font-rubik">
+                                                            ?
+                                                        </div>
 
-                                                    <div className="flex flex-col gap-4 text-start max-w-sm font-poppins text-white ">
-                                                        <h5 className="text-lg font-bold">
-                                                            {item.heading}
-                                                        </h5>
-                                                        <p className="text-sm leading-6 font-light">
-                                                            {item.desc}
-                                                        </p>
+                                                        <div className="flex flex-col gap-4 text-start max-w-sm font-poppins text-white ">
+                                                            <h5 className="text-lg font-bold">
+                                                                {item.heading}
+                                                            </h5>
+                                                            <p className="text-sm leading-6 font-light">
+                                                                {item.desc}
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             ))}

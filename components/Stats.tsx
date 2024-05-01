@@ -1,4 +1,14 @@
+'use client'
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Stats = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 })
+    }, [])
+
+
     const stats = [
         {
             data: "1M+",
@@ -15,9 +25,12 @@ const Stats = () => {
     ];
 
     return (
-        <section className="py-16 border-b border-gray/40 my-10">
+        <section className="py-16 border-b border-gray/40 my-10" >
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-                <ul className="flex flex-col items-center justify-center gap-x-12 gap-y-10 sm:flex-row sm:flex-wrap md:gap-x-24">
+                <ul className="flex flex-col items-center justify-center gap-x-12 gap-y-10 sm:flex-row sm:flex-wrap md:gap-x-24"
+                    data-aos="fade-down"
+                    data-aos-anchor-placement="top-bottom"
+                >
                     {stats.map((item, idx) => (
                         <li key={idx} className="flex items-center gap-6 text-center">
                             <h4 className="text-5xl tracking-tighter text-lightBlack font-bold font-poppins">
@@ -29,6 +42,8 @@ const Stats = () => {
                 </ul>
             </div>
         </section>
+
     );
 };
 export default Stats;
+

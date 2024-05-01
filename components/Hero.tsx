@@ -55,7 +55,7 @@ const Hero = () => {
                             alt="hero"
                             height={720}
                             width={1400}
-                            className="mx-auto rounded-2xl object-cover object-center md:h-full md:object-left-top"
+                            className="mx-auto rounded-2xl object-cover object-center md:h-full md:object-left-top mt-10"
                             draggable={false}
                         />
                     </motion.div>

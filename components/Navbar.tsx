@@ -9,10 +9,10 @@ export default function Navbar() {
 
 
     const navLinks = [
-        { title: "Demos", path: "#" },
-        { title: "About", path: "#" },
-        { title: "Support", path: "#" },
-        { title: "Contact", path: "#" }
+        { title: "Home", path: "/" },
+        { title: "Features", path: "#features" },
+        { title: "Pricing", path: "#pricing" },
+        { title: "Contact", path: "#contact" }
     ]
 
     return (
@@ -48,7 +48,7 @@ export default function Navbar() {
                             navLinks.map((item, idx) => {
                                 return (
                                     <li key={idx} className="text-lightBlack hover:text-purple font-semibold text-md font-poppins text-center">
-                                        <Link href={item.path}>
+                                        <Link href={item.path} >
                                             {item.title}
                                         </Link>
                                     </li>

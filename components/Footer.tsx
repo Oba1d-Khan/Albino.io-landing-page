@@ -1,12 +1,17 @@
+'use client'
 import Link from "next/link";
 
+
+
 const Footer = () => {
+
     return (
-        <div className="bg-white pt-4 sm:pt-10 lg:pt-12 border-t border-lightBlack/10">
-            <footer className="mx-auto container px-4 md:px-8">
+        <div className="bg-white pt-4 sm:pt-10 lg:pt-12 border-t border-lightBlack/10" >
+            <footer className="mx-auto container px-4 md:px-8" >
+
                 <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
-                    <div className="col-span-full lg:col-span-2">
-                        <div className="mb-4 lg:-mt-2  font-poppins">
+                    <div className="col-span-full lg:col-span-2" >
+                        <div className="mb-4 lg:-mt-2  font-poppins"  >
                             <Link
                                 href="/"
                                 className="text-lightBlack inline-flex items-center gap-2 text-xl font-bold md:text-2xl"
@@ -91,6 +96,7 @@ const Footer = () => {
                             </Link>
                         </div>
                     </div>
+
 
                     <div>
                         <div className="mb-4  font-medium text-gray-800">Company</div>

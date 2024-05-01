@@ -1,13 +1,24 @@
+'use client'
 import Image from "next/image";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Features = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 })
+    }, [])
     return (
-        <div>
-            <div className="py-2 container mx-auto">
+        <div id="features">
+            <div className="py-2 container mx-auto" >
 
-                <div className="md:mx-16 mt-16 grid gap-8 lg:gap-0 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="md:mx-16 mt-16 lg:mt-2 grid gap-8 lg:gap-0 sm:grid-cols-2 lg:grid-cols-3"
+                    data-aos="fade-down"
+                    data-aos-anchor-placement="top-bottom"
+                >
 
-                    <div className="group relative p-8 rounded-3xl dark:border-gray-700 dark:bg-gray-800 dark:lg:bg-transparent hover:border-gray-100 dark:shadow-none dark:hover:border-gray-700 dark:hover:bg-gray-800 shadow-lg shadow-gray-600/10 lg:shadow-transparent lg:hover:shadow-gray-600/10 sm:gap-8 sm:flex transition duration-300">
+                    <div
+                        className="group relative p-8 rounded-3xl dark:border-gray-700 dark:bg-gray-800 dark:lg:bg-transparent hover:border-gray-100 dark:shadow-none dark:hover:border-gray-700 dark:hover:bg-gray-800 shadow-lg shadow-gray-600/10 lg:shadow-transparent lg:hover:shadow-gray-600/10 sm:gap-8 sm:flex transition duration-300">
                         <div className="relative">
                             <Image
                                 src="/images/code-img.png"
@@ -26,7 +37,8 @@ const Features = () => {
                         </div>
                     </div>
 
-                    <div className="group relative p-8 rounded-3xl dark:border-gray-700 dark:bg-gray-800 dark:lg:bg-transparent lg:border-transparent hover:border-gray-100 dark:shadow-none dark:hover:border-gray-700 dark:hover:bg-gray-800 shadow-lg shadow-gray-600/10 lg:shadow-transparent lg:hover:shadow-gray-600/10 sm:gap-8 sm:flex transition duration-300">
+                    <div
+                        className="group relative p-8 rounded-3xl dark:border-gray-700 dark:bg-gray-800 dark:lg:bg-transparent lg:border-transparent hover:border-gray-100 dark:shadow-none dark:hover:border-gray-700 dark:hover:bg-gray-800 shadow-lg shadow-gray-600/10 lg:shadow-transparent lg:hover:shadow-gray-600/10 sm:gap-8 sm:flex transition duration-300">
                         <div className="relative">
                             <Image
                                 src="/images/time-img.png"
@@ -45,7 +57,8 @@ const Features = () => {
                         </div>
                     </div>
 
-                    <div className="group relative p-8 rounded-3xl dark:border-gray-700 dark:bg-gray-800 dark:lg:bg-transparent  lg:border-transparent hover:border-gray-100 dark:shadow-none dark:hover:border-gray-700 dark:hover:bg-gray-800 shadow-lg shadow-gray-600/10 lg:shadow-transparent lg:hover:shadow-gray-600/10 sm:gap-8 sm:flex transition duration-300">
+                    <div
+                        className="group relative p-8 rounded-3xl dark:border-gray-700 dark:bg-gray-800 dark:lg:bg-transparent  lg:border-transparent hover:border-gray-100 dark:shadow-none dark:hover:border-gray-700 dark:hover:bg-gray-800 shadow-lg shadow-gray-600/10 lg:shadow-transparent lg:hover:shadow-gray-600/10 sm:gap-8 sm:flex transition duration-300">
                         <div className="relative">
                             <Image
                                 src="/images/mobile-img.png"

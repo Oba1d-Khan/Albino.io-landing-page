@@ -1,9 +1,18 @@
+'use client'
 import Image from "next/image";
-
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Testimonials = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 })
+    }, [])
     return (
-        <div className="bg-secWhite py-16 lg:py-24 ">
-            <div className="max-w-7xl mx-auto grid md:grid-cols-2 justify-center gap-24 md:gap-6 md:items-center md:justify-between">
+        <div className="bg-secWhite py-16 lg:py-24 " >
+            <div className="max-w-7xl mx-auto grid md:grid-cols-2 justify-center gap-24 md:gap-6 md:items-center md:justify-between"
+                data-aos="fade-down"
+                data-aos-anchor-placement="top-bottom"
+            >
 
                 <div className="font-poppins text-lightBlack flex flex-col items-center justify-between text-center gap-5">
                     <div className="h-auto overflow-hidden lg:w-1/12 pb-4">
